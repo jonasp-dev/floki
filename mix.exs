@@ -113,6 +113,6 @@ defmodule Floki.Mixfile do
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["test/support", "lib"]
+  defp elixirc_paths(env) when env in [:dev, :test], do: ["test/support", "lib"]
   defp elixirc_paths(_), do: ["lib"]
 end
